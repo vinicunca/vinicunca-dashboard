@@ -1,6 +1,6 @@
-import type { AppRouteRecordRaw } from '../type.router';
+import type { AppRouteRecordRaw } from '../router.entity';
 
-import { PAGE_ROUTE } from '../entity.router';
+import { PAGE_ROUTE } from '../router.entity';
 import { PAGE_NOT_FOUND_ROUTE, REDIRECT_ROUTE } from './basic';
 
 const modules = import.meta.glob<Record<string, string>>('./modules/**/*.ts', { eager: true });

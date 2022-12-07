@@ -1,16 +1,15 @@
 import type { THEME_MODE } from '~/theme/entity.theme';
-import type { ProjectConfig } from './types.app';
-import type { BeforeMiniState } from './entity.app';
-import type { HeaderSetting } from '~/header/entity.header';
-import type { MenuSetting } from '~/menu/entity.menu';
-import type { TransitionSetting } from '~/transition/entity.transition';
-import type { MultiTabsSetting } from '~/tabs/entity.tab';
+import type { BeforeMiniState, ProjectConfig } from './app.entity';
+import type { HeaderSetting } from '~/header/header.entity';
+import type { MenuSetting } from '~/menu/menu.entity';
+import type { TransitionSetting } from '~/transition/transition.entity';
+import type { MultiTabsSetting } from '~/tabs/tabs.entity';
 
 import { defineStore } from 'pinia';
 import { mergeDeep } from '@vinicunca/js-utilities';
 
-import { PersistentCache } from '~/cache/persistent.cache';
-import { APP_DARK_MODE_KEY_, PROJ_CFG_KEY } from '~/cache/entity.cache';
+import { PersistentCache } from '~/cache/cache.persistent';
+import { APP_DARK_MODE_KEY_, PROJ_CFG_KEY } from '~/cache/cache.entity';
 import { DARK_MODE } from '~/theme/setting.theme';
 import { store } from '~/store';
 import { resetRouter } from '~/router';
@@ -27,7 +26,7 @@ interface AppState {
 
 let timeId: TimeoutHandle;
 
-export const useStoreApp = defineStore({
+export const useAppStore = defineStore({
   id: 'app',
 
   state: (): AppState => ({
@@ -107,7 +106,7 @@ export const useStoreApp = defineStore({
 });
 
 // Need to be used outside the setup
-export function useStoreAppWithOut() {
-  return useStoreApp(store);
+export function useAppStoreWithOut() {
+  return useAppStore(store);
 }
 

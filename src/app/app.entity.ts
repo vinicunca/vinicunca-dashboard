@@ -1,9 +1,39 @@
-import type { CACHE_TYPE } from '~/cache/entity.cache';
-import type { CONTENT_MODE, PERMISSION_MODE, SESSION_TIMEOUT_PROCESSING, SETTINGS_BUTTON_POSITION } from './entity.app';
-import type { HeaderSetting } from '~/header/entity.header';
-import type { MenuSetting } from '~/menu/entity.menu';
-import type { MultiTabsSetting } from '~/tabs/entity.tab';
-import type { TransitionSetting } from '~/transition/entity.transition';
+import type { MENU_MODE, MENU_TYPE, MenuSetting } from '~/menu/menu.entity';
+import type { CACHE_TYPE } from '~/cache/cache.entity';
+import type { HeaderSetting } from '~/header/header.entity';
+import type { MultiTabsSetting } from '~/tabs/tabs.entity';
+import type { TransitionSetting } from '~/transition/transition.entity';
+
+export enum SETTINGS_BUTTON_POSITION {
+  AUTO = 'auto',
+  HEADER = 'header',
+  FIXED = 'fixed',
+}
+
+export enum PERMISSION_MODE {
+  ROLE = 'ROLE',
+  BACK = 'BACK',
+  ROUTE_MAPPING = 'ROUTE_MAPPING',
+}
+
+export enum SESSION_TIMEOUT_PROCESSING {
+  ROUTE_JUMP,
+  PAGE_COVERAGE,
+}
+
+export enum CONTENT_MODE {
+  // auto width
+  FULL = 'full',
+  // fixed width
+  FIXED = 'fixed',
+}
+
+export interface BeforeMiniState {
+  menuCollapsed?: boolean;
+  menuSplit?: boolean;
+  menuMode?: MENU_MODE;
+  menuType?: MENU_TYPE;
+}
 
 export interface ProjectConfig {
   // Storage location of permission related information

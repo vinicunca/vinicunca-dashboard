@@ -1,4 +1,4 @@
-import type { LocaleSetting, LocaleType } from './types.locale';
+import type { LocaleSetting, LocaleType } from './locale.entity';
 
 export const LOCALE: Record<string, LocaleType> = {
   EN_US: 'en',

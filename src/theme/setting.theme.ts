@@ -3,6 +3,7 @@ import { THEME_MODE } from './entity.theme';
 export const prefixCls = 'vadmin';
 
 export const DARK_MODE = THEME_MODE.LIGHT;
+export const PRIMARY_COLOR = '#0960bd';
 
 // app theme preset color
 export const APP_PRESET_COLOR_LIST: string[] = [

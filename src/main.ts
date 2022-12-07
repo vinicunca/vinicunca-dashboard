@@ -2,6 +2,7 @@ import 'uno.css';
 import { createApp } from 'vue';
 
 import App from './app.vue';
+import { initAppConfigStore } from './app/app.config';
 
 import { setupStore } from '~/store';
 
@@ -12,7 +13,7 @@ async function bootstrap() {
   setupStore(app);
 
   // Initialize internal system configuration
-  // initAppConfigStore();
+  initAppConfigStore();
 
   // // Register global components
   // // 注册全局组件

@@ -1,6 +1,6 @@
-import type { AppRouteRecordRaw } from '../type.router';
+import type { AppRouteRecordRaw } from '../router.entity';
 
-import { EXCEPTION_COMPONENT, LAYOUT, PAGE_NOT_FOUND_NAME, REDIRECT_NAME } from '../entity.router';
+import { EXCEPTION_COMPONENT, LAYOUT, PAGE_NOT_FOUND_NAME, REDIRECT_NAME } from '../router.entity';
 
 // 404 on a page
 export const PAGE_NOT_FOUND_ROUTE: AppRouteRecordRaw = {

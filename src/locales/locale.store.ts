@@ -1,10 +1,10 @@
-import type { LocaleSetting, LocaleType } from './types.locale';
+import type { LocaleSetting, LocaleType } from './locale.entity';
 
 import { defineStore } from 'pinia';
 
 import { store } from '~/store';
-import { LOCALE_KEY } from '~/cache/entity.cache';
-import { localeSetting } from '~/locales/setting.locale';
+import { LOCALE_KEY } from '~/cache/cache.entity';
+import { localeSetting } from '~/locales/locale.setting';
 import { createLocalStorage } from '~/cache';
 
 const _localStorage = createLocalStorage();
@@ -14,7 +14,7 @@ interface LocaleState {
   localInfo: LocaleSetting;
 }
 
-export const useStoreLocale = defineStore({
+export const useLocaleStore = defineStore({
   id: 'app-locale',
 
   state: (): LocaleState => ({
@@ -55,6 +55,6 @@ export const useStoreLocale = defineStore({
 });
 
 // Need to be used outside the setup
-export function useStoreLocaleWithOut() {
-  return useStoreLocale(store);
+export function useLocaleStoreWithOut() {
+  return useLocaleStore(store);
 }
