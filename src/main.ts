@@ -3,6 +3,7 @@ import { createApp } from 'vue';
 
 import App from './app.vue';
 import { initAppConfigStore } from './app/app.config';
+import { setupRouter } from './router';
 
 import { setupStore } from '~/store';
 
@@ -15,36 +16,26 @@ async function bootstrap() {
   // Initialize internal system configuration
   initAppConfigStore();
 
-  // // Register global components
-  // // 注册全局组件
-  // registerGlobComp(app);
-
-  // // Multilingual configuration
-  // // 多语言配置
-  // // Asynchronous case: language files may be obtained from the server side
-  // // 异步案例：语言文件可能从服务器端获取
+  /**
+   * Multilingual configuration
+   *
+   * Asynchronous case: language files may be obtained from the server side
+   */
   // await setupI18n(app);
 
-  // // Configure routing
-  // // 配置路由
-  // setupRouter(app);
+  // Configure routing
+  setupRouter(app);
 
-  // // router-guard
-  // // 路由守卫
+  // router-guard
   // setupRouterGuard(router);
 
-  // // Register global directive
-  // // 注册全局指令
+  // Register global directive
   // setupGlobDirectives(app);
 
-  // // Configure global error handling
-  // // 配置全局错误处理
+  // Configure global error handling
   // setupErrorHandle(app);
 
-  // // https://next.router.vuejs.org/api/#isready
-  // // await router.isReady();
-
-  // app.mount('#app');
+  app.mount('#app');
 }
 
 bootstrap();

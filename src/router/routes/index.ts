@@ -26,7 +26,7 @@ export const ROOT_ROUTE: AppRouteRecordRaw = {
 export const LOGIN_ROUTE: AppRouteRecordRaw = {
   path: PAGE_ROUTE.BASE_LOGIN,
   name: 'Login',
-  component: () => import('/@/views/sys/login/Login.vue'),
+  // component: () => import('/@/views/sys/login/Login.vue'),
   meta: {
     title: 'Login',
   },
