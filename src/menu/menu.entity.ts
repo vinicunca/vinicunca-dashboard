@@ -1,4 +1,4 @@
-import type { THEME_MODE } from '~/theme/entity.theme';
+import type { THEME_MODE } from '~~/theme/entity.theme';
 
 export const SIDE_BAR_MINI_WIDTH = 48;
 export const SIDE_BAR_SHOW_TIT_MINI_WIDTH = 80;

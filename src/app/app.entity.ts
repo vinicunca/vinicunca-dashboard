@@ -1,8 +1,8 @@
-import type { MENU_MODE, MENU_TYPE, MenuSetting } from '~/menu/menu.entity';
-import type { CACHE_TYPE } from '~/cache/cache.entity';
-import type { HeaderSetting } from '~/header/header.entity';
-import type { MultiTabsSetting } from '~/tabs/tabs.entity';
-import type { TransitionSetting } from '~/transition/transition.entity';
+import type { MENU_MODE, MENU_TYPE, MenuSetting } from '~~/menu/menu.entity';
+import type { CACHE_TYPE } from '~~/cache/cache.entity';
+import type { HeaderSetting } from '~~/header/header.entity';
+import type { MultiTabsSetting } from '~~/tabs/tabs.entity';
+import type { TransitionSetting } from '~~/transition/transition.entity';
 
 export enum SETTINGS_BUTTON_POSITION {
   AUTO = 'auto',

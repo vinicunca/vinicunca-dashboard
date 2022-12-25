@@ -1,7 +1,7 @@
 import type { RouteLocationNormalized } from 'vue-router';
-import type { MULTIPLE_TABS_KEY, PROJ_CFG_KEY, ROLES_KEY } from '~/cache/cache.entity';
-import type { ProjectConfig } from '~/app/app.entity';
-import type { UserInfo } from '~/user/user.entity';
+import type { MULTIPLE_TABS_KEY, PROJ_CFG_KEY, ROLES_KEY } from '~~/cache/cache.entity';
+import type { ProjectConfig } from '~~/app/app.entity';
+import type { UserInfo } from '~~/user/user.entity';
 
 import { toRaw } from 'vue';
 import { omitProps, pickProps } from '@vinicunca/js-utilities';
@@ -10,8 +10,8 @@ import { MemoryCache } from './cache.memory';
 
 import { createLocalStorage, createSessionStorage } from '.';
 
-import { APP_LOCAL_CACHE_KEY, APP_SESSION_CACHE_KEY, LOCK_INFO_KEY, TOKEN_KEY, USER_INFO_KEY } from '~/cache/cache.entity';
-import { DEFAULT_CACHE_TIME } from '~/encryption/encryption.setting';
+import { APP_LOCAL_CACHE_KEY, APP_SESSION_CACHE_KEY, LOCK_INFO_KEY, TOKEN_KEY, USER_INFO_KEY } from '~~/cache/cache.entity';
+import { DEFAULT_CACHE_TIME } from '~~/encryption/encryption.setting';
 
 interface BasicStore {
   [TOKEN_KEY]: string | number | null | undefined;

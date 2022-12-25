@@ -1,11 +1,14 @@
+import './reset.css'; // TODO: use @vinicunca/unocss/reset.css instead
 import 'uno.css';
+
 import { createApp } from 'vue';
+import { createVinicunca } from 'vinicunca';
 
 import App from './app.vue';
 import { initAppConfigStore } from './app/app.config';
 import { setupRouter } from './router';
 
-import { setupStore } from '~/store';
+import { setupStore } from '~~/store';
 
 async function bootstrap() {
   const app = createApp(App);
@@ -34,6 +37,8 @@ async function bootstrap() {
 
   // Configure global error handling
   // setupErrorHandle(app);
+
+  app.use(createVinicunca());
 
   app.mount('#app');
 }

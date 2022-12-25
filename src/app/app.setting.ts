@@ -2,11 +2,11 @@ import type { ProjectConfig } from './app.entity';
 
 import { CONTENT_MODE, PERMISSION_MODE, SESSION_TIMEOUT_PROCESSING, SETTINGS_BUTTON_POSITION } from './app.entity';
 
-import { TRANSITION_ROUTER } from '~/transition/transition.entity';
-import { MENU_MODE, MENU_TYPE, MIX_SIDEBAR_TRIGGER, TRIGGER_TYPE } from '~/menu/menu.entity';
-import { THEME_MODE } from '~/theme/entity.theme';
-import { HEADER_PRESET_BG_COLOR_LIST, PRIMARY_COLOR, SIDE_BAR_BG_COLOR_LIST } from '~/theme/setting.theme';
-import { CACHE_TYPE } from '~/cache/cache.entity';
+import { TRANSITION_ROUTER } from '~~/transition/transition.entity';
+import { MENU_MODE, MENU_TYPE, MIX_SIDEBAR_TRIGGER, TRIGGER_TYPE } from '~~/menu/menu.entity';
+import { THEME_MODE } from '~~/theme/entity.theme';
+import { HEADER_PRESET_BG_COLOR_LIST, PRIMARY_COLOR, SIDE_BAR_BG_COLOR_LIST } from '~~/theme/setting.theme';
+import { CACHE_TYPE } from '~~/cache/cache.entity';
 
 export const projectSettings: ProjectConfig = {
   // Whether to show the configuration button

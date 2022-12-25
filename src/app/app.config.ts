@@ -5,11 +5,11 @@ import { mergeDeep } from '@vinicunca/js-utilities';
 import { useAppStore } from './app.store';
 import { projectSettings } from './app.setting';
 
-import { useLocaleStore } from '~/locales/locale.store';
-import { getCommonStoragePrefix, getStorageShortName } from '~/utils/env';
-import { PersistentCache } from '~/cache/cache.persistent';
-import { PROJ_CFG_KEY } from '~/cache/cache.entity';
-// import { PRIMARY_COLOR } from '~/theme/setting.theme';
+import { useLocaleStore } from '~~/locales/locale.store';
+import { getCommonStoragePrefix, getStorageShortName } from '~~/utils/env';
+import { PersistentCache } from '~~/cache/cache.persistent';
+import { PROJ_CFG_KEY } from '~~/cache/cache.entity';
+// import { PRIMARY_COLOR } from '~~/theme/setting.theme';
 
 export function initAppConfigStore() {
   const localeStore = useLocaleStore();

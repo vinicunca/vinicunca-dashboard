@@ -24,7 +24,7 @@
 
     "types": ["vite/client"],
     "paths": {
-      "~/*": ["src/*"],
+      "~~/*": ["src/*"],
       "#/*": ["types/*"]
     }
   },

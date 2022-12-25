@@ -1,4 +1,4 @@
-import type { THEME_MODE } from '~/theme/entity.theme';
+import type { THEME_MODE } from '~~/theme/entity.theme';
 
 export interface HeaderSetting {
   bgColor: string;

@@ -2,10 +2,10 @@ import type { LocaleSetting, LocaleType } from './locale.entity';
 
 import { defineStore } from 'pinia';
 
-import { store } from '~/store';
-import { LOCALE_KEY } from '~/cache/cache.entity';
-import { localeSetting } from '~/locales/locale.setting';
-import { createLocalStorage } from '~/cache';
+import { store } from '~~/store';
+import { LOCALE_KEY } from '~~/cache/cache.entity';
+import { localeSetting } from '~~/locales/locale.setting';
+import { createLocalStorage } from '~~/cache';
 
 const _localStorage = createLocalStorage();
 const _localeSetting = (_localStorage.get(LOCALE_KEY) || localeSetting) as LocaleSetting;

@@ -38,13 +38,25 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
       alias: [
         // ~/xxx => src/xxx
         {
-          find: /~\//,
+          find: /~~\//,
           replacement: `${pathResolve('src')}/`,
         },
         // #/xxx => types/xxx
         {
           find: /#\//,
           replacement: `${pathResolve('types')}/`,
+        },
+
+        // !Remove this when the lib is published
+        {
+          find: /^vinicunca$/,
+          replacement: pathResolve('../vinicunca-ui/packages/vinicunca/src/entry.ts'),
+        },
+        // !TEMPORARY, the ~ alias is for resolving internal vinicunca lib
+        // !Remove this when the lib is published
+        {
+          find: /^~\/(.*)/,
+          replacement: pathResolve('../vinicunca-ui/packages/vinicunca/src/$1'),
         },
       ],
     },

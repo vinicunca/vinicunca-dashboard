@@ -38,4 +38,5 @@ export const BASIC_ROUTES = [
   ROOT_ROUTE,
   REDIRECT_ROUTE,
   PAGE_NOT_FOUND_ROUTE,
+  ...routeModuleList,
 ];

@@ -34,21 +34,21 @@ export const PARENT_LAYOUT_NAME = 'ParentLayout';
 
 export const PAGE_NOT_FOUND_NAME = 'PageNotFound';
 
-export const EXCEPTION_COMPONENT = () => import('~/app/pages/app-page-exception.vue');
+export const EXCEPTION_COMPONENT = () => import('~~/app/pages/app-page-exception.vue');
 
 /**
  * @description: default layout
  */
-export const LAYOUT = () => import('~/layouts/default/index.vue');
+export const LAYOUT = () => import('~~/layouts/default/index.vue');
 
 /**
  * @description: parent-layout
  */
-export const getParentLayout = (_name?: string) => {
+export function getParentLayout(_name?: string) {
   return () =>
     new Promise((resolve) => {
       resolve({
         name: _name || PARENT_LAYOUT_NAME,
       });
     });
-};
+}

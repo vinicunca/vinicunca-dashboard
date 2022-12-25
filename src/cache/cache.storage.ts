@@ -1,9 +1,9 @@
-import type { EncryptionParams } from '~/encryption/encryption.cipher';
+import type { EncryptionParams } from '~~/encryption/encryption.cipher';
 
 import { isUnset } from '@vinicunca/js-utilities';
 
-import { AesEncryption } from '~/encryption/encryption.cipher';
-import { CACHE_CIPHER } from '~/encryption/encryption.setting';
+import { AesEncryption } from '~~/encryption/encryption.cipher';
+import { CACHE_CIPHER } from '~~/encryption/encryption.setting';
 
 export interface CreateStorageParams extends EncryptionParams {
   prefixKey: string;
