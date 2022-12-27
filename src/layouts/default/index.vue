@@ -16,7 +16,7 @@ import VDrawer from '~~/vinicunca/v-drawer.vue';
     >
     </VinAppHeader>
 
-    <VDrawer class="elevation-10">
+    <VDrawer class="vin-elevation-10">
     </VDrawer>
 
     <VinMain

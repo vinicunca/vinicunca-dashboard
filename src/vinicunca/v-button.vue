@@ -32,18 +32,18 @@ defineProps({
         align-middle
         shrink-0
 
-        text-$vin-color
-        bg-$vin-bg-color
-        border-$vin-border-color
-        h-$vin-height
         [--vin-height:36px]
-        text-sm
+        text-[0.875rem]
         min-w-[64px]
         px-4
-        hover:(text-$vin-hover-color bg-$vin-hover-bg-color border-$vin-hover-border-color)
-        focus:(text-$vin-hover-color bg-$vin-hover-bg-color border-$vin-hover-border-color)
-        active:(text-$vin-hover-color bg-$vin-active-bg-color border-$vin-active-border-color)
-        focus-visible:(outline-blue-500 outline-2 outline-offset-4)
+
+        vin-elevation-2
+
+        h-$vin-height
+
+        hover:(vin-elevation-4)
+        active:(vin-elevation-8)
+
       `,
       icon ? `uno-layer-variants:(w-[calc(var(--vin-height)+12px)] h-[calc(var(--vin-height)+12px)] rounded-full px-0 text-base min-w-0)`
       : ''

@@ -26,7 +26,7 @@ function getRootClass(_, context) {
     :root-class="getRootClass"
     content-class="flex-[0_1_auto] h-full max-w-full overflow-x-hidden overflow-y-auto"
     scrim-class="absolute w-full h-full bg-black opacity-20 transition-opacity-200 z-1"
-    temporary-class="elevation-16"
+    temporary-class="vin-elevation-16"
   >
     <template v-for="(_, slot) of $slots" #[slot]="scope">
       <slot :name="slot" v-bind="scope || {}" />
