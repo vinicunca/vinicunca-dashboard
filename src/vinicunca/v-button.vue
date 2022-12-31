@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 defineProps({
-  icon: Boolean,
+  circle: Boolean,
   variant: String,
   color: String,
   size: String,
@@ -37,12 +37,16 @@ defineProps({
         border-current
 
         before:(content-empty absolute inset-0 transition-opacity w-full h-full bg-current rounded-inherit opacity-0 pointer-events-none)
+        after:(content-empty absolute inset-0 transition-opacity w-full h-full border-2 rounded-inherit opacity-0 pointer-events-none)
+        focus-visible(border-0)
+        focus-visible:after:(opacity-80)
+        focus-visible:before:(opacity-10)
       `,
-      icon ? `uno-layer-variants:(w-[calc(var(--vin-height)+12px)] h-[calc(var(--vin-height)+12px)] rounded-full px-0 text-base min-w-0)`
+      circle ? `uno-layer-variants:(w-[calc(var(--vin-height)+12px)] h-[calc(var(--vin-height)+12px)] rounded-full px-0 text-base min-w-0)`
       : ''
     ]"
     content-class="flex items-center justify-center whitespace-nowrap relative"
-    disabled-class="uno-layer-variants:(bg-$vin-disable-bg-color text-$vin-disable-color border-$vin-disable-border-color) cursor-not-allowed uno-layer-variants:hover:(bg-$vin-disable-bg-color text-$vin-disable-color border-$vin-disable-border-color)"
+    disabled-class="opacity-30 pointer-events-none"
     v-bind="$attrs"
   >
     <slot />

@@ -12,6 +12,8 @@ const buttons = [
       { text: 'Error', class: 'vin-button--[brand-error]' },
       { text: 'Warning', class: 'vin-button--[brand-warning]' },
       { text: 'Success', class: 'vin-button--[brand-success]' },
+      { text: 'Default', class: 'vin-button', disabled: true },
+      { text: 'Primary', class: 'vin-button--[brand-primary]', disabled: true },
     ],
   },
   {
@@ -23,6 +25,8 @@ const buttons = [
       { text: 'Error', class: 'vin-button--[brand-error outline]' },
       { text: 'Warning', class: 'vin-button--[brand-warning outline]' },
       { text: 'Success', class: 'vin-button--[brand-success outline]' },
+      { text: 'Default', class: 'vin-button--[outline]', disabled: true },
+      { text: 'Primary', class: 'vin-button--[brand-primary outline]', disabled: true },
     ],
   },
   {
@@ -34,6 +38,8 @@ const buttons = [
       { text: 'Error', class: 'vin-button--[brand-error text]' },
       { text: 'Warning', class: 'vin-button--[brand-warning text]' },
       { text: 'Success', class: 'vin-button--[brand-success text]' },
+      { text: 'Default', class: 'vin-button--[text]', disabled: true },
+      { text: 'Primary', class: 'vin-button--[brand-primary text]', disabled: true },
     ],
   },
   {
@@ -53,13 +59,6 @@ const buttons = [
       { text: 'Success', class: 'vin-button--[brand-success x-large]' },
     ],
   },
-  {
-    title: 'Icon',
-    types: [
-      { text: 'Default', class: 'vin-button w-full' },
-      { text: 'Success', class: 'vin-button w-full' },
-    ],
-  },
 ];
 </script>
 
@@ -68,8 +67,27 @@ const buttons = [
     <div v-for="button in buttons" :key="button.title" class="g-col-12 lg:g-col-6">
       <AppCard :title="button.title">
         <div class="flex flex-wrap gap-2 items-center">
-          <VButton v-for="btn in button.types" :key="btn.text" :class="btn.class">
+          <VButton
+            v-for="btn in button.types"
+            :key="btn.text"
+            :class="btn.class"
+            :disabled="btn.disabled"
+          >
             {{ btn.text }}
+          </VButton>
+        </div>
+      </AppCard>
+    </div>
+
+    <div class="g-col-12 lg:g-col-6">
+      <AppCard title="Icons">
+        <div class="flex flex-wrap gap-2 items-center">
+          <VButton circle class="vin-button">
+            <span name="i-carbon:settings" class="i-carbon:settings text-2xl" />
+          </VButton>
+
+          <VButton circle class="vin-button--[brand-primary outline]">
+            <span name="i-carbon:workspace" class="i-carbon:workspace text-2xl" />
           </VButton>
         </div>
       </AppCard>

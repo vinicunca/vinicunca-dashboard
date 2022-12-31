@@ -23,9 +23,9 @@ const vinicuncaConfig = defineVinicuncaConfig({
         'x-large': '[--vin-height:52px] text-[1.125rem] min-w-[92px] px-6',
       },
       variants: {
-        default: 'elevation-2 hover:before:(opacity-20)',
+        default: 'elevation-2 hover:elevation-4 hover:before:(opacity-10)',
         outline: 'bg-transparent border-1 hover:before:(opacity-100)',
-        text: '',
+        text: 'hover:before:(opacity-10)',
       },
     },
   },
