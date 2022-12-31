@@ -31,24 +31,17 @@ defineProps({
         select-none
         align-middle
         shrink-0
-
-        [--vin-height:36px]
-        text-[0.875rem]
-        min-w-[64px]
-        px-4
-
-        vin-elevation-2
-
         h-$vin-height
+        border-0
+        border-solid
+        border-current
 
-        hover:(vin-elevation-4)
-        active:(vin-elevation-8)
-
+        before:(content-empty absolute inset-0 transition-opacity w-full h-full bg-current rounded-inherit opacity-0 pointer-events-none)
       `,
       icon ? `uno-layer-variants:(w-[calc(var(--vin-height)+12px)] h-[calc(var(--vin-height)+12px)] rounded-full px-0 text-base min-w-0)`
       : ''
     ]"
-    content-class="flex items-center justify-center whitespace-nowrap"
+    content-class="flex items-center justify-center whitespace-nowrap relative"
     disabled-class="uno-layer-variants:(bg-$vin-disable-bg-color text-$vin-disable-color border-$vin-disable-border-color) cursor-not-allowed uno-layer-variants:hover:(bg-$vin-disable-bg-color text-$vin-disable-color border-$vin-disable-border-color)"
     v-bind="$attrs"
   >

@@ -1,106 +1,75 @@
 <script lang="ts" setup>
 import AppCard from '~~/app/components/app-card.vue';
 import VButton from '~~/vinicunca/v-button.vue';
+
+const buttons = [
+  {
+    title: 'Default',
+    types: [
+      { text: 'Default', class: 'vin-button' },
+      { text: 'Primary', class: 'vin-button--[brand-primary]' },
+      { text: 'Secondary', class: 'vin-button--[brand-secondary]' },
+      { text: 'Error', class: 'vin-button--[brand-error]' },
+      { text: 'Warning', class: 'vin-button--[brand-warning]' },
+      { text: 'Success', class: 'vin-button--[brand-success]' },
+    ],
+  },
+  {
+    title: 'Outline',
+    types: [
+      { text: 'Default', class: 'vin-button--[outline]' },
+      { text: 'Primary', class: 'vin-button--[brand-primary outline]' },
+      { text: 'Secondary', class: 'vin-button--[brand-secondary outline]' },
+      { text: 'Error', class: 'vin-button--[brand-error outline]' },
+      { text: 'Warning', class: 'vin-button--[brand-warning outline]' },
+      { text: 'Success', class: 'vin-button--[brand-success outline]' },
+    ],
+  },
+  {
+    title: 'Text',
+    types: [
+      { text: 'Default', class: 'vin-button--[text]' },
+      { text: 'Primary', class: 'vin-button--[brand-primary text]' },
+      { text: 'Secondary', class: 'vin-button--[brand-secondary text]' },
+      { text: 'Error', class: 'vin-button--[brand-error text]' },
+      { text: 'Warning', class: 'vin-button--[brand-warning text]' },
+      { text: 'Success', class: 'vin-button--[brand-success text]' },
+    ],
+  },
+  {
+    title: 'Block',
+    types: [
+      { text: 'Default', class: 'vin-button w-full' },
+      { text: 'Success', class: 'vin-button w-full' },
+    ],
+  },
+  {
+    title: 'Sizes',
+    types: [
+      { text: 'Primary', class: 'vin-button--[brand-primary x-small]' },
+      { text: 'Secondary', class: 'vin-button--[brand-secondary small]' },
+      { text: 'Error', class: 'vin-button--[brand-error]' },
+      { text: 'Warning', class: 'vin-button--[brand-warning large]' },
+      { text: 'Success', class: 'vin-button--[brand-success x-large]' },
+    ],
+  },
+  {
+    title: 'Icon',
+    types: [
+      { text: 'Default', class: 'vin-button w-full' },
+      { text: 'Success', class: 'vin-button w-full' },
+    ],
+  },
+];
 </script>
 
 <template>
   <div class="vin-grid p-8">
-    <div class="g-col-12 lg:g-col-6">
-      <AppCard title="Default">
-        <div class="flex flex-wrap gap-2">
-          <VButton class="vin-button">
-            Default
-          </VButton>
-          <VButton class="vin-button-brand-primary">
-            Primary
-          </VButton>
-          <VButton class="vin-button-brand-secondary">
-            Secondary
-          </VButton>
-          <VButton class="vin-button-brand-error">
-            Error
-          </VButton>
-          <VButton class="vin-button-brand-warning">
-            Warning
-          </VButton>
-          <VButton class="vin-button-brand-success">
-            Success
-          </VButton>
-          <VButton class="vin-button-brand-primary" disabled>
-            Disabled
-          </VButton>
-        </div>
-      </AppCard>
-    </div>
-
-    <div class="g-col-12 lg:g-col-6">
-      <AppCard title="Outline">
-        <div class="flex flex-wrap gap-2">
-          <VButton class="vin-button-outline-brand-primary">
-            Primary
-          </VButton>
-          <VButton class="vin-button-outline-brand-secondary">
-            Secondary
-          </VButton>
-          <VButton class="vin-button-outline-brand-error">
-            Error
-          </VButton>
-          <VButton class="vin-button-outline-brand-warning">
-            Warning
-          </VButton>
-          <VButton class="vin-button-outline-brand-success">
-            Success
-          </VButton>
-          <VButton class="vin-button-outline-brand-primary" disabled>
-            Disabled
-          </VButton>
-        </div>
-      </AppCard>
-    </div>
-
-    <div class="g-col-12 lg:g-col-6">
-      <AppCard title="Block">
-        <div class="flex flex-wrap gap-2">
-          <VButton class="w-full">
-            Success
-          </VButton>
-          <VButton class="w-full" disabled>
-            Disabled
-          </VButton>
-        </div>
-      </AppCard>
-    </div>
-
-    <div class="g-col-12 lg:g-col-6">
-      <AppCard title="Sizes">
-        <div class="flex flex-wrap items-center gap-2">
-          <VButton class="vin-button-brand-primary vin-button--x-small">
-            Primary
-          </VButton>
-          <VButton class="vin-button-brand-secondary vin-button--small">
-            Secondary
-          </VButton>
-          <VButton class="vin-button-brand-error">
-            Error
-          </VButton>
-          <VButton class="vin-button-brand-warning vin-button--large">
-            Warning
-          </VButton>
-          <VButton class="vin-button-brand-success vin-button--x-large">
-            Success
-          </VButton>
-        </div>
-      </AppCard>
-    </div>
-
-    <div class="g-col-12 lg:g-col-6">
-      <AppCard title="Icon">
-        <div class="flex flex-wrap items-center gap-2">
-          <VButton icon class="vin-button-brand-primary">
-            <VinIcon name="i-carbon:settings" class="text-2xl" />
-          </VButton>
-          <VButton icon color="#1976D2">
-            <VinIcon name="i-carbon:workspace" class="text-2xl" />
+    <div v-for="button in buttons" :key="button.title" class="g-col-12 lg:g-col-6">
+      <AppCard :title="button.title">
+        <div class="flex flex-wrap gap-2 items-center">
+          <VButton v-for="btn in button.types" :key="btn.text" :class="btn.class">
+            {{ btn.text }}
           </VButton>
         </div>
       </AppCard>

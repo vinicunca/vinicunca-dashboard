@@ -1,5 +1,35 @@
 import { defineConfig, presetIcons, presetUno, presetWebFonts, transformerDirectives, transformerVariantGroup } from 'unocss';
-import { presetVinicunca } from '@vinicunca/unocss-preset';
+import { defineVinicuncaConfig } from '@vinicunca/unocss-preset';
+
+const vinicuncaConfig = defineVinicuncaConfig({
+  prefix: 'vin-',
+  theme: {
+    preflights: {
+      'background': '#fff',
+      'on-background': '#000',
+      'surface': '#fff',
+      'on-surface': '#000',
+      'overlay-multiplier': 1,
+      'scrollbar-offset': '0px',
+    },
+  },
+  components: {
+    button: {
+      sizes: {
+        'x-small': '[--vin-height:20px] text-[0.625rem] min-w-[36px] px-2',
+        'small': '[--vin-height:28px] text-[0.75rem] min-w-[50px] px-3',
+        'default': '[--vin-height:36px] text-[0.875rem] min-w-[64px] px-4',
+        'large': '[--vin-height:44px] text-[1rem] min-w-[78px] px-5',
+        'x-large': '[--vin-height:52px] text-[1.125rem] min-w-[92px] px-6',
+      },
+      variants: {
+        default: 'elevation-2 hover:before:(opacity-20)',
+        outline: 'bg-transparent border-1 hover:before:(opacity-100)',
+        text: '',
+      },
+    },
+  },
+});
 
 export default defineConfig({
   theme: {
@@ -62,36 +92,13 @@ export default defineConfig({
       },
     }),
 
-    presetVinicunca({
-      prefix: 'vin-',
-      theme: {
-        preflights: {
-          'background': '#fff',
-          'on-background': '#000',
-          'surface': '#fff',
-          'on-surface': '#000',
-          'overlay-multiplier': 1,
-          'scrollbar-offset': '0px',
-        },
-      },
-      components: {
-        button: {
-          blackContrast: '#000',
-          whiteContrast: '#fff',
-          sizes: {
-            'x-small': '[--vin-height:20px] text-[0.625rem] min-w-[36px] px-2',
-            'small': '[--vin-height:28px] text-[0.75rem] min-w-[50px] px-3',
-            'large': '[--vin-height:44px] text-[1rem] min-w-[78px] px-5',
-            'x-large': '[--vin-height:52px] text-[1.125rem] min-w-[92px] px-6',
-          },
-        },
-      },
-    }),
+    vinicuncaConfig.getPreset(),
   ],
 
   transformers: [
     transformerDirectives(),
     transformerVariantGroup(),
+    vinicuncaConfig.getTransformer(),
   ],
 
   shortcuts: [

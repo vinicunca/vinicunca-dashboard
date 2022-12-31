@@ -8,12 +8,12 @@ import Unocss from 'unocss/vite';
 import { configHtmlPlugin } from './html';
 import { configMockPlugin } from './mock';
 import { configVisualizerConfig } from './visualizer';
-import { configImageminPlugin } from './imagemin';
+// import { configImageminPlugin } from './imagemin';
 import { configCompressPlugin } from './compress';
 
 export function createVitePlugins({ viteEnv, isBuild }: { viteEnv: ViteEnv; isBuild: boolean }) {
   const {
-    VITE_USE_IMAGEMIN,
+    // VITE_USE_IMAGEMIN,
     VITE_USE_MOCK,
     VITE_BUILD_COMPRESS,
     VITE_BUILD_COMPRESS_DELETE_ORIGIN_FILE,
@@ -40,7 +40,7 @@ export function createVitePlugins({ viteEnv, isBuild }: { viteEnv: ViteEnv; isBu
   // The following plugins only work in the production environment
   if (isBuild) {
     // vite-plugin-imagemin
-    VITE_USE_IMAGEMIN && vitePlugins.push(configImageminPlugin());
+    // VITE_USE_IMAGEMIN && vitePlugins.push(configImageminPlugin());
 
     // rollup-plugin-gzip
     vitePlugins.push(
